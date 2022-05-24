@@ -15,11 +15,11 @@ public class BoardController {
 	@Autowired
 	BoardService service;
 	
-	@RequestMapping("list")
+	@RequestMapping("pages-account-settings-notifications")
 	public String boardList(Model model) throws Exception {
 		List<BoardModel> boardList = service.boardList(); 
 		model.addAttribute("boardList", boardList);
 		System.out.println(boardList);
-		return "list";
+		return "pages-account-settings-notifications";
 	}
 }

@@ -1,9 +1,16 @@
 package com.freeze.model;
 
-import java.util.Date;
-
 public class BoardModel {
 	private int id;
+	private String maker;
+	private String model;
+	private String volumn;
+	private String ea;
+	private String use_date;
+	private String detail_contents;
+	private String image;
+	private String price;
+	
 	public int getId() {
 		return id;
 	}
@@ -58,15 +65,4 @@ public class BoardModel {
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	private String maker;
-	private String model;
-	private String volumn;
-	private String ea;
-	private String use_date;
-	private String detail_contents;
-	private String image;
-	private String price;
-
-	
-
 }

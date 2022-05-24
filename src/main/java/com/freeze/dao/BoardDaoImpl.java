@@ -7,7 +7,7 @@ import com.freeze.model.BoardModel;
 public class BoardDaoImpl implements BoardDao {
 	SqlSession sqlSession;
     
-	public static String nameSpace = "pack.dao.BoardDao";
+	public static String nameSpace = "com.freeze.dao.BoardDao";
 
 	@Override
 	public List<BoardModel> boardList() throws Exception {
