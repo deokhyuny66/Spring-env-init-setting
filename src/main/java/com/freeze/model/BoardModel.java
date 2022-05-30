@@ -10,6 +10,14 @@ public class BoardModel {
 	private String detail_contents;
 	private String image;
 	private String price;
+	private String ofIndex;
+	
+	public String getofIndex() {
+		return ofIndex;
+	}
+	public void setofIndex(String ofIndex) {
+		this.ofIndex = ofIndex;
+	}
 	
 	public int getId() {
 		return id;

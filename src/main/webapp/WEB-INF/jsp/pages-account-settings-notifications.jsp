@@ -8,16 +8,7 @@
 <%@ page import="java.util.Map.Entry" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%-- <%
-	request.setCharacterEncoding("UTF-8"); 
 
-	BoardDaoImpl actionDAO = new BoardDaoImpl();
-	BoardModel actionDTO = new BoardModel();
-	int j = 0;
-	ArrayList<HashMap<String,String>> rs_dao_list = new ArrayList<HashMap<String,String>>();
-	HashMap<String,String> map = new HashMap<String,String>();
-	rs_dao_list = actionDAO.selectAll();	
-%> --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//KR" "http://www.w3.org/TR/html4/loose.dtd">
   <head>
     <meta http-equiv=“Content-Type” content=“text/html; charset=UTF-8”>
@@ -198,16 +189,19 @@
                         </tr>
                       </thead>
                       <tbody>
-                      <c:forEach items="${boardList}" var="dto"> </div>
-                      		<th scope="row">${fn:length(boardList)}</th>
-	                        <td>${dto.maker}</td>
-	                        <td>${dto.model}</td>
-	                        <td>${dto.volumn}</td>
-	                        <td>${dto.ea}</td>
-	                        <td>${dto.use_date}</td>
-	                        <td>${dto.detail_contents}</td>
-	                        <td>${dto.image}</td>
-	                        <td>${dto.price}</td>
+                      <c:forEach items="${boardList}" var="dto">
+                      	<c:set var="i" value="${i+1}" />
+	                      <tr id="item${i}" onClick="reply_click(this.id,'${dto.id}')">
+	                      		<th scope="row">${i}</th>
+		                        <td>${dto.maker}</td>
+		                        <td>${dto.model}</td>
+		                        <td>${dto.volumn}</td>
+		                        <td>${dto.ea}</td>
+		                        <td>${dto.use_date}</td>
+		                        <td>${dto.detail_contents}</td>
+		                        <td>${dto.image}</td>
+		                        <td>${dto.price}</td>
+	                      </tr>
 					  </c:forEach>  
                        <%-- <% for (j=0;j<rs_dao_list.size();j++) {%>
                         <tr id="<%= j+1 %>" onClick="reply_click(this.id,'<%=rs_dao_list.get(j).get("ID")%>')">
@@ -272,20 +266,22 @@
 	const modal = document.getElementById('modal');
 	const closeBtn = modal.querySelector('.close-area');
 		  
-	function reply_click(tb_clickId, clickedId){
+	function reply_click(tb_clickId, clickeIdNo){
 		item_click = document.getElementById(tb_clickId);
 		item_click.addEventListener('click', function(){
 			modalOn();
+			var messageDTO={
+				click_ItemNm:clickeIdNo
+			};
 			$.ajax({
 				type: 'POST',
-				url: 'itemsAjax.jsp',
-				dataType: 'text',
-				cache: false, 
-				data: {
-					clickItemId:clickedId
-				},
+				url: 'itemAjax',
+				data: messageDTO,
 				success: function(res){
-					$('#modal #contentForm .content *').remove();
+					if(typeof res === 'object'){
+						alert(JSON.stringify(res));
+					}
+					/* $('#modal #contentForm .content *').remove();
 					res = res.replace(/[\[\]\;]/gi,'');
 					res = res.trim();
 					let json = JSON.parse(res);
@@ -297,7 +293,7 @@
 				    			+ 'name="selitemParam'+i+'" value="'+json[key]+'" aria-describedby="defaultFormControlHelp" ><input type="hidden" name="clickedId" value="'+clickedId+'">' );
 				    }	
 				    $temp = $temp.append('<div style="text-align:center;position:relative;left:90px;">'
-						    + '<br/><input type="submit" class="btn btn-info" value="수정" name="update">&nbsp;&nbsp;<input type="submit" class="btn btn-dark" value="삭제" name="delete"></div>');
+						    + '<br/><input type="submit" class="btn btn-info" value="수정" name="update">&nbsp;&nbsp;<input type="submit" class="btn btn-dark" value="삭제" name="delete"></div>'); */
 				},
 				error: function(){
 					alert("False");

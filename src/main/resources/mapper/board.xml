@@ -3,9 +3,11 @@
 						"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.freeze.dao.BoardDao">
-
 	<select id="boardList" resultType="com.freeze.model.BoardModel">
 		SELECT * FROM tb_complist;
 	</select>
-
+	
+	<!-- <select id="boardListOfIndex" resultType="com.freeze.model.BoardModel">
+		SELECT MAKER,MODEL,VOLUMN,EA,USE_DATE,DETAIL_CONTENTS,IMAGE,PRICE FROM TB_COMPLIST WHERE ID=#{boardListOfIndexItem};
+	</select> -->
 </mapper>
