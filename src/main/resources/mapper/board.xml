@@ -7,7 +7,7 @@
 		SELECT * FROM tb_complist;
 	</select>
 	
-	<!-- <select id="boardListOfIndex" resultType="com.freeze.model.BoardModel">
-		SELECT MAKER,MODEL,VOLUMN,EA,USE_DATE,DETAIL_CONTENTS,IMAGE,PRICE FROM TB_COMPLIST WHERE ID=#{boardListOfIndexItem};
-	</select> -->
+	<select id="listOfIndex" resultType="com.freeze.model.BoardModel">
+		SELECT MAKER,MODEL,VOLUMN,EA,USE_DATE,DETAIL_CONTENTS,IMAGE,PRICE FROM TB_COMPLIST WHERE ID=#{clickItem};
+	</select>
 </mapper>

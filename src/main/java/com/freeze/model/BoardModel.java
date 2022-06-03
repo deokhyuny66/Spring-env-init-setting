@@ -11,7 +11,6 @@ public class BoardModel {
 	private String image;
 	private String price;
 	private String ofIndex;
-	
 	public String getofIndex() {
 		return ofIndex;
 	}

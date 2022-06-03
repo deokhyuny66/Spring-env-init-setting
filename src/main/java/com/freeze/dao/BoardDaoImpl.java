@@ -13,4 +13,9 @@ public class BoardDaoImpl implements BoardDao {
 	public List<BoardModel> boardList() throws Exception {
 		return sqlSession.selectList(nameSpace + ".boadList");
 	}
+	
+	@Override
+	public List<BoardModel> listOfIndex(String clickItem) throws Exception {
+		return sqlSession.selectList(nameSpace + ".listOfIndex",clickItem);
+	}
 }

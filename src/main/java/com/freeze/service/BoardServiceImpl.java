@@ -10,9 +10,14 @@ import com.freeze.model.BoardModel;
 public class BoardServiceImpl implements BoardService {
 	@Autowired
 	BoardDao dao;
-
+	
 	@Override
 	public List<BoardModel> boardList() throws Exception {
 		return dao.boardList();
+	}
+	
+	@Override
+	public List<BoardModel> listOfIndex(String clickItem) throws Exception {
+		return dao.listOfIndex(clickItem);
 	}
 }
