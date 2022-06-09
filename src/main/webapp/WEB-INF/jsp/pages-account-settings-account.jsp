@@ -7,7 +7,6 @@
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
-  data-assets-path="./assets/"
   data-template="vertical-menu-template-free"
 >
   <head>
@@ -20,7 +19,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,24 +30,24 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="./assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="./assets/vendor/css/core1.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="./assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="./assets/css/demo.css" />
+    <link rel="stylesheet" href="vendor/css/core1.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="./assets/vendor/js/helpers.js"></script>
+    <script src="vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="./assets/js/config.js"></script>
+    <script src="js/config.js"></script>
   </head>
 
   <body>
@@ -136,12 +135,12 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item active">
-                  <a href="./pages-account-settings-account.jsp" class="menu-link">
+                  <a href="pages-account-settings-account" class="menu-link">
                     <div data-i18n="Account">Register</div>
                   </a>
                 </li>
  				<li class="menu-item">
-	              <a href="./pages-account-settings-notifications.jsp" class="menu-link">
+	              <a href="pages-account-settings-notifications" class="menu-link">
 	                <i class="menu-icon tf-icons bx bx-table"></i>
 	                <div data-i18n="List">List</div>
 	              </a>
@@ -170,7 +169,7 @@
                       <a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> Register</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="./pages-account-settings-notifications.jsp"
+                      <a class="nav-link" href="pages-account-settings-notifications"
                         ><i class="bx bx-bell me-1"></i> List</a
                       >
                     </li>
@@ -181,7 +180,7 @@
                     <div class="card-body">
                       <div class="d-flex align-items-start align-items-sm-center gap-4">
                         <img
-                          src="./assets/img/avatars/1.png"
+                          src="img/avatars/1.png"
                           alt="user-avatar"
                           class="d-block rounded"
                           height="100"
@@ -268,21 +267,21 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="./assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="./assets/vendor/libs/popper/popper.js"></script>
-    <script src="./assets/vendor/js/bootstrap.js"></script>
-    <script src="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/libs/jquery/jquery.js"></script>
+    <script src="vendor/libs/popper/popper.js"></script>
+    <script src="vendor/js/bootstrap.js"></script>
+    <script src="vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-    <script src="./assets/vendor/js/menu.js"></script>
+    <script src="vendor/js/menu.js"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="./assets/js/main.js"></script>
+    <script src="js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="./assets/js/pages-account-settings-account.js"></script>
+    <script src="js/pages-account-settings-account.js"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,9 +37,12 @@ public class BoardController {
 	@ResponseBody
 	@RequestMapping(value = "itemAjax" , method = RequestMethod.POST)
 	public Object listOfIndex(@RequestParam(value="click_ItemNm") String clickItemNm) throws Exception {
-		model.setofIndex(clickItemNm);
 		List<BoardModel> data = service.listOfIndex(clickItemNm);
-		System.out.println(data);
 		return data;
+	}
+
+	@RequestMapping("pages-account-settings-account")
+	public String boardRegister(Model model) throws Exception {
+		return "pages-account-settings-account";
 	}
 }

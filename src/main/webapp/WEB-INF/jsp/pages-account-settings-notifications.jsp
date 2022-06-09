@@ -134,12 +134,12 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="./pages-account-settings-account.jsp" class="menu-link">
+                  <a href="pages-account-settings-account" class="menu-link">
                     <div data-i18n="Account">Register</div>
                   </a>
                 </li>
 	            <li class="menu-item active">
-	              <a href="./pages-account-settings-notifications.jsp" class="menu-link">
+	              <a href="pages-account-settings-notifications" class="menu-link">
 	                <i class="menu-icon tf-icons bx bx-table"></i>
 	                <div data-i18n="List">List</div>
 	              </a>
@@ -161,10 +161,10 @@
 			<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Account Settings /</span> List</h4>
              <ul class="nav nav-pills flex-column flex-md-row mb-3">
             	<li class="nav-item">
-              		<a class="nav-link" href="./pages-account-settings-account.jsp"><i class="bx bx-user me-1"></i> Register</a>
+              		<a class="nav-link" href="pages-account-settings-account"><i class="bx bx-user me-1"></i> Register</a>
             	</li>
             	<li class="nav-item">
-              		<a class="nav-link active" href="./pages-account-settings-notifications.jsp"><i class="bx bx-bell me-1"></i> List</a>
+              		<a class="nav-link active" href="pages-account-settings-notifications"><i class="bx bx-bell me-1"></i> List</a>
             	</li>
          	 </ul>
 			
@@ -278,22 +278,22 @@
 				url: 'itemAjax',
 				data: messageDTO,
 				success: function(res){
-					if(typeof res === 'object'){
-						alert(JSON.stringify(res));
-					}
-					/* $('#modal #contentForm .content *').remove();
-					res = res.replace(/[\[\]\;]/gi,'');
-					res = res.trim();
-					let json = JSON.parse(res);
+					$('#modal #contentForm .content *').remove();
+					let json = JSON.stringify(res);
+					json = json.replace(/[\[\]\;]/gi,'');
+					json = JSON.parse(json);
 					let keys = Object.keys(json);
 					let $temp;
+					
 				    for (let i=0; i<keys.length; i++) {
 				    	let key = keys[i];
-			    		$temp = $('#modal #contentForm .content').append('<label for="defaultFormControlInput" style="color:#566a7f;" class="form-label">'+key+'</label><input type="text" class="form-control" id="defaultFormControlInput"' 
-				    			+ 'name="selitemParam'+i+'" value="'+json[key]+'" aria-describedby="defaultFormControlHelp" ><input type="hidden" name="clickedId" value="'+clickedId+'">' );
+				    	if(key != 'id'){
+			    			$temp = $('#modal #contentForm .content').append('<label for="defaultFormControlInput" style="color:#566a7f;" class="form-label">'+key+'</label><input type="text" class="form-control" id="defaultFormControlInput"' 
+				    			+ 'name="selitemParam'+i+'" value="'+json[key]+'" aria-describedby="defaultFormControlHelp" ><input type="hidden" name="clickedId" value="'+clickeIdNo+'">' );
+				    	}
 				    }	
 				    $temp = $temp.append('<div style="text-align:center;position:relative;left:90px;">'
-						    + '<br/><input type="submit" class="btn btn-info" value="수정" name="update">&nbsp;&nbsp;<input type="submit" class="btn btn-dark" value="삭제" name="delete"></div>'); */
+						    + '<br/><input type="submit" class="btn btn-info" value="수정" name="update">&nbsp;&nbsp;<input type="submit" class="btn btn-dark" value="삭제" name="delete"></div>');
 				},
 				error: function(){
 					alert("False");
