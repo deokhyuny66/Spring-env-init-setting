@@ -26,7 +26,6 @@ public class BoardController {
 	BoardService service;
 	
 	BoardModel model = new BoardModel();
-	
 	@RequestMapping("pages-account-settings-notifications")
 	public String boardList(Model model) throws Exception {
 		List<BoardModel> boardList = service.boardList(); 

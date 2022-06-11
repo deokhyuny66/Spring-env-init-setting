@@ -17,6 +17,7 @@ public class BoardModel {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 	public String getMaker() {
 		return maker;
 	}

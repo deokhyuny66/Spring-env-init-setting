@@ -19,9 +19,10 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap.min.css" />
+	<link href="css/lightbox.css" rel="stylesheet" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,7 +30,7 @@
       href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/main.css">
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="vendor/fonts/boxicons.css" />
 
@@ -199,7 +200,7 @@
 		                        <td>${dto.ea}</td>
 		                        <td>${dto.use_date}</td>
 		                        <td>${dto.detail_contents}</td>
-		                        <td>${dto.image}</td>
+		                        <td><a href="img/avatars/1.png" data-lightbox="roadtrip">1.png</a></td><!-- ${dto.image} -->
 		                        <td>${dto.price}</td>
 	                      </tr>
 					  </c:forEach>  
@@ -284,12 +285,21 @@
 					json = JSON.parse(json);
 					let keys = Object.keys(json);
 					let $temp;
-					
+					const titles = ['메이커','모델명','용량[HP]','보유수량(EA)','사용기간','상세내용','사진','금액'];
 				    for (let i=0; i<keys.length; i++) {
 				    	let key = keys[i];
+				    	
 				    	if(key != 'id'){
-			    			$temp = $('#modal #contentForm .content').append('<label for="defaultFormControlInput" style="color:#566a7f;" class="form-label">'+key+'</label><input type="text" class="form-control" id="defaultFormControlInput"' 
-				    			+ 'name="selitemParam'+i+'" value="'+json[key]+'" aria-describedby="defaultFormControlHelp" ><input type="hidden" name="clickedId" value="'+clickeIdNo+'">' );
+				    		let title = titles[i-1];
+							if(title == '사진'){
+								$temp = $('#modal #contentForm .content').append('<label for="defaultFormControlInput" style="color:#566a7f;" class="form-label">'+title+'</label>' 
+						    			+ '<input type="file" class="form-control" id="defaultFormControlInput" name="selitemParam'+i+'" aria-describedby="defaultFormControlHelp"><input type="hidden" name="clickedId" value="'+clickeIdNo+'">' );
+				    		}else {
+				    			$temp = $('#modal #contentForm .content').append('<label for="defaultFormControlInput" style="color:#566a7f;" class="form-label">'+title+'</label><input type="text" class="form-control" id="defaultFormControlInput"' 
+						    			+ 'name="selitemParam'+i+'" value="'+json[key]+'" aria-describedby="defaultFormControlHelp"><input type="hidden" name="clickedId" value="'+clickeIdNo+'">' );
+				    		}
+				    		
+				    		
 				    	}
 				    }	
 				    $temp = $temp.append('<div style="text-align:center;position:relative;left:90px;">'
@@ -301,6 +311,19 @@
 			});
 		});
 	}
+	
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 	
 	function modalOn() {
 		modal.style.display = 'flex';
@@ -323,6 +346,7 @@
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src="vendor/libs/popper/popper.js"></script>
+    <script src="js/lightbox.js"></script>
     <script src="vendor/js/menu.js"></script>
     <script src="js/main.js"></script>
     <!-- Place this tag in your head or just before your close body tag. -->
