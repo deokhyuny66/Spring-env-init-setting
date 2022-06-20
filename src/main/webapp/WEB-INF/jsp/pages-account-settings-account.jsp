@@ -210,28 +210,29 @@
                     </div>
                     <hr class="my-0" />
                     <div class="card-body">
-                      <form id="formAccountSettings" action="./addAction.jsp" method="POST" onsubmit="return false">
+                    
+                      <form id="formAccountSettings" action="list-register-proc" method="POST">
                         <div class="row">
                           <div class="mb-3 col-md-6">
-                            <label for="firstName" class="form-label">Name</label>
+                            <label for="firstName" class="form-label">메이커</label>
                             <input
                               id="basic-default-email"
                               class="form-control"
-                              name="param1"
-                              placeholder="John.doe"
-                              aria-label="John.doe"
+                              name="maker-param"
+                              placeholder="메이커명"
+                              aria-label="메이커명"
                               aria-describedby="basic-default-email2"
                               autofocus
                             />
                           </div>
                           <div class="mb-3 col-md-6">
-                            <label for="lastName" class="form-label">Age</label>
+                            <label for="lastName" class="form-label">모델</label>
                             <input 
                               id="basic-default-email"
                               class="form-control"
-                              name="param2"
-                              placeholder="Age"
-                              aria-label="Age"
+                              name="model-param"
+                              placeholder="모델명"
+                              aria-label="모델명"
                               aria-describedby="basic-default-email2"
                               autofocus
                             />

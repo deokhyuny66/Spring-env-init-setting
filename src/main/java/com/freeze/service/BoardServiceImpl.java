@@ -20,4 +20,16 @@ public class BoardServiceImpl implements BoardService {
 	public List<BoardModel> listOfIndex(String clickItem) throws Exception {
 		return dao.listOfIndex(clickItem);
 	}
+	
+	@Override
+	public int boardRegister(BoardModel model) throws Exception {
+		/*
+		 * model.setMaker(model.getMaker()); model.setModel(model.getModel());
+		 * model.setVolumn(model.getMaker()); model.setEa(model.getMaker());
+		 * model.setUse_date(model.getMaker());
+		 * model.setDetail_contents(model.getMaker()); model.setImage(model.getMaker());
+		 * model.setPrice(model.getMaker());
+		 */
+		return dao.boardRegister(model);
+	}
 }

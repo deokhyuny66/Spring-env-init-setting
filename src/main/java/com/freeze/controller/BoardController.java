@@ -44,4 +44,18 @@ public class BoardController {
 	public String boardRegister(Model model) throws Exception {
 		return "pages-account-settings-account";
 	}
+	
+	@RequestMapping("list-register-proc")
+	public void boardRegisterProc(@RequestParam(value="maker-param") String makerParam, @RequestParam(value="model-param") String modelParam) throws Exception {
+		String redirect_url = null;
+		model.setMaker(makerParam);
+		model.setModel(modelParam);
+		model.setVolumn(modelParam); 
+		model.setEa(modelParam);
+	  	model.setUse_date(modelParam); 
+	  	model.setDetail_contents(modelParam);
+	  	model.setImage(modelParam); 
+	  	model.setPrice(modelParam);
+		service.boardRegister(model);
+	}
 }

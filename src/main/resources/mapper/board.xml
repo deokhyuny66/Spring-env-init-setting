@@ -10,4 +10,8 @@
 	<select id="listOfIndex" resultType="com.freeze.model.BoardModel">
 		SELECT MAKER,MODEL,VOLUMN,EA,USE_DATE,DETAIL_CONTENTS,IMAGE,PRICE FROM TB_COMPLIST WHERE ID=#{clickItem};
 	</select>
+	
+	<insert id="boardRegister">
+		INSERT INTO TB_COMPLIST VALUES(null,#{maker},#{model},#{volumn},#{ea},#{use_date},#{detail_contents},#{image},#{price});
+	</insert>
 </mapper>
